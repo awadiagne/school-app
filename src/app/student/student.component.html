@@ -1,0 +1,38 @@
+<div class="container">
+    <h1>School App</h1>
+    <form class="col-sm-3">
+      <div class="form-group">
+        <div class="label">Student Name</div>
+        <input type="text" [(ngModel)]="name" name="name" class="form-control">
+      </div>
+      <div class="form-group">
+        <div class="label">Student Class</div>
+        <select name="status" class="form-control" [(ngModel)]="classId">
+          <option [value]="class.id" *ngFor="let class of getClasses()">{{ class.name }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <button type="button" (click)="addStudent()" class="btn btn-success">ADD</button>
+      </div>
+    </form>
+    
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>Id</td>
+          <td>Name</td>
+          <td>Class</td>
+          <td>Delete</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of getStudents()">
+          <td>{{ student.id }}</td>
+          <td>{{ student.name }}</td>
+          <td>{{ student.classId }}</td>
+          <td><button (click)="deleteClass(student.id)" class="btn btn-danger">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <router-outlet></router-outlet>
