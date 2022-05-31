@@ -12,7 +12,7 @@
         </select>
       </div>
       <div class="form-group">
-        <button type="button" (click)="addStudent()" class="btn btn-success">ADD</button>
+        <button type="button" (click)="addStudent()" class="btn btn-success">Add</button>
       </div>
     </form>
     
@@ -22,15 +22,17 @@
           <td>Id</td>
           <td>Name</td>
           <td>Class</td>
+          <td>Edit</td>
           <td>Delete</td>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let student of getStudents()">
+        <tr *ngFor="let student of getStudents()" >
           <td>{{ student.id }}</td>
-          <td>{{ student.name }}</td>
-          <td>{{ student.classId }}</td>
-          <td><button (click)="deleteClass(student.id)" class="btn btn-danger">Delete</button></td>
+          <td appEditable>{{ student.name }}</td>
+          <td appEditable>{{ student.className }}</td>
+          <td><button (click)="editStudent(student.id)" class="btn btn-warning">Edit</button></td>
+          <td><button (click)="deleteStudent(student.id)" class="btn btn-danger">Delete</button></td>
         </tr>
       </tbody>
     </table>

@@ -28,6 +28,12 @@ export class ClassComponent implements OnInit {
     const classIndex = this.classesList.findIndex((classParam) => classParam.id === id);
     this.classesList.splice(classIndex, 1);
   }
+
+  editClass(id : number) {
+    const classIndex = this.classesList.findIndex((classParam) => classParam.id === id);
+    this.classesList.splice(classIndex, 1);
+    this.classesList.push({ id: id, name: this.name, size: this.size });
+  }
   
   addClass() {
     const lastIndex = this.classesList.length - 1;

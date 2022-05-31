@@ -10,12 +10,15 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
+import {MatTableModule} from '@angular/material/table';
+import { EditableDirective } from './editable.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClassComponent,
-    StudentComponent
+    StudentComponent,
+    EditableDirective,
   ],
   imports: [
     BrowserModule,
@@ -23,7 +26,8 @@ import { MatButtonModule } from '@angular/material/button';
     FormsModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
