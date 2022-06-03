@@ -1,1 +1,39 @@
-<p>class-details works!</p>
+<div class="container">
+    <h1>School App</h1>
+    <form class="col-sm-3">
+      <div class="form-group">
+        <div class="label">Class Name</div>
+        <input type="text" [(ngModel)]="name" name="name" class="form-control">
+      </div>
+      <div class="form-group">
+        <div class="label">Class Size</div>
+        <input type="number" [(ngModel)]="size" name="size" class="form-control">
+      </div>
+      <div class="form-group">
+        <button type="button" (click)="editClass()" class="btn btn-success">EDIT</button>
+      </div>
+    </form>
+    
+    <h1>CLASSES LIST</h1>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <td>Id</td>
+          <td>Name</td>
+          <td>Size</td>
+          <td>Edit</td>
+          <td>Delete</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let class of getClasses()">
+          <td>{{ class.id }}</td>
+          <td>{{ class.name }}</td>
+          <td>{{ class.size }}</td>
+          <td><a routerLink="/classDetails/{{ class.id }}" class="btn btn-warning">Edit</a></td>
+          <td><button (click)="deleteClass(class.id)" class="btn btn-danger">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <router-outlet></router-outlet>
