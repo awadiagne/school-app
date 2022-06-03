@@ -7,15 +7,15 @@
       </div>
       <div class="form-group">
         <div class="label">Student Class</div>
-        <select name="status" class="form-control" [(ngModel)]="classId">
-          <option [value]="class.id" *ngFor="let class of getClasses()">{{ class.name }}</option>
+        <select name="status" class="form-control" [(ngModel)]="className">
+          <option [value]="class.name" *ngFor="let class of getClasses()">{{ class.name }}</option>
         </select>
       </div>
       <div class="form-group">
-        <button type="button" (click)="addStudent()" class="btn btn-success">Add</button>
+        <button type="button" (click)="editStudent()" class="btn btn-success">Edit</button>
       </div>
     </form>
-    
+
     <table class="table table-striped">
       <thead>
         <tr>
@@ -36,5 +36,5 @@
         </tr>
       </tbody>
     </table>
-  </div>
-  <router-outlet></router-outlet>
+</div>
+<router-outlet></router-outlet>

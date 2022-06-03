@@ -30,7 +30,7 @@
           <td>{{ class.id }}</td>
           <td>{{ class.name }}</td>
           <td>{{ class.size }}</td>
-          <td><button (click)="editClass(class.id)" class="btn btn-warning">Edit</button></td>
+          <td><a routerLink="/classDetails/{{ class.id }}" class="btn btn-warning">Edit</a></td>
           <td><button (click)="deleteClass(class.id)" class="btn btn-danger">Delete</button></td>
         </tr>
       </tbody>

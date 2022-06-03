@@ -11,7 +11,7 @@ export class ClassComponent implements OnInit {
   id = 0;
   name = "Terminal";
   size = 0;
-  statusSelected = null;
+  statusSelected: any = null;
   classesList = [
       { id: 0, name: "Terminal S1", size: 27 },
       { id: 1, name: "Terminal S2", size: 48 },

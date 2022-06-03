@@ -11,14 +11,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatButtonModule } from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
-import { EditableDirective } from './editable.directive';
+import { StudentDetailsComponent } from './student-details/student-details.component';
+import { ClassDetailsComponent } from './class-details/class-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ClassComponent,
     StudentComponent,
-    EditableDirective,
+    StudentDetailsComponent,
+    ClassDetailsComponent,
   ],
   imports: [
     BrowserModule,
