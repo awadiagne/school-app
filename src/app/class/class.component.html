@@ -18,7 +18,6 @@
     <table class="table table-striped">
       <thead>
         <tr>
-          <td>Id</td>
           <td>Name</td>
           <td>Size</td>
           <td>Edit</td>
@@ -26,8 +25,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let class of getClasses()">
-          <td>{{ class.id }}</td>
+        <tr *ngFor="let class of classesList">
           <td>{{ class.name }}</td>
           <td>{{ class.size }}</td>
           <td><a routerLink="/classDetails/{{ class.id }}" class="btn btn-warning">Edit</a></td>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AClass } from '../interfaces/aClass';
+import { ClassService } from '../services/class-service.service';
 
 @Component({
   selector: 'app-class',
@@ -9,52 +11,38 @@ import { Component, OnInit } from '@angular/core';
 export class ClassComponent implements OnInit {
 
   id = 0;
-  name = "Terminal";
+  name = "";
   size = 0;
-  statusSelected: any = null;
-  classesList = [
-      { id: 0, name: "Terminal S1", size: 27 },
-      { id: 1, name: "Terminal S2", size: 48 },
-      { id: 2, name: "Terminal L1a", size: 33 },
-      { id: 3, name: "Terminal L2b", size: 42 }
-  ];
+  classesList : AClass [] = [];
+  oneClass : AClass;
 
-  constructor() { }
+  constructor(private classService : ClassService) { }
 
   ngOnInit(): void {
+    this.getClasses();
+  }
+    
+  getClass() {
+    return this.classService.getClass(this.id)
+      .subscribe(oneClass => this.oneClass = oneClass);
   }
 
-  deleteClass(id : number) {
-    const classIndex = this.classesList.findIndex((classParam) => classParam.id === id);
-    this.classesList.splice(classIndex, 1);
+  getClasses() : void {
+    this.classService.getClasses()
+      .subscribe(classes => this.classesList = classes);
   }
 
-  editClass(id : number) {
-    const classIndex = this.classesList.findIndex((classParam) => classParam.id === id);
-    this.classesList.splice(classIndex, 1);
-    this.classesList.push({ id: id, name: this.name, size: this.size });
+  deleteClass(id : any) {
+    this.classService.deleteClass(id)
+      .subscribe();
   }
   
   addClass() {
-    const lastIndex = this.classesList.length - 1;
-    const id = this.classesList[lastIndex].id + 1;
-    this.classesList.push({ id: id, name: this.name, size: this.size });
-    this.name = "";
-  }
-  
-  getClass() {
-    return this.classesList.filter((classParam) => classParam.id === this.id);
-  }
-
-  getClasses() {
-    return this.classesList;
-  }
-
-  filterClass() {
-    if(this.statusSelected === null) {
-      return this.classesList;
+    if(this.name.length > 0 && this.size > 0) {
+      this.classService.createClass({ id: this.classesList.length, name: this.name, size: this.size })
+        .subscribe(oneClass => this.oneClass = oneClass);
     }
-    return this.classesList.filter((classParam) => this.id === classParam.id);
-  } 
+  }
+
 }
   

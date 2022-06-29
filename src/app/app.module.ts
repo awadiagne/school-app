@@ -13,6 +13,7 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import { StudentDetailsComponent } from './student-details/student-details.component';
 import { ClassDetailsComponent } from './class-details/class-details.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ClassDetailsComponent } from './class-details/class-details.component';
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatButtonModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
