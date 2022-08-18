@@ -28,8 +28,8 @@
         <tr *ngFor="let class of classesList">
           <td>{{ class.name }}</td>
           <td>{{ class.size }}</td>
-          <td><a routerLink="/classDetails/{{ class.id }}" class="btn btn-warning">Edit</a></td>
-          <td><button (click)="deleteClass(class.id)" class="btn btn-danger">Delete</button></td>
+          <td><a routerLink="/classDetails/{{ class._id }}" class="btn btn-warning">Edit</a></td>
+          <td><button (click)="deleteClass(class._id)" class="btn btn-danger">Delete</button></td>
         </tr>
       </tbody>
     </table>

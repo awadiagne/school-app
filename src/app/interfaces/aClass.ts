@@ -1,5 +1,5 @@
 export interface AClass {
-  id : number,
+  _id? : string,
   name: string,
   size: number
 }

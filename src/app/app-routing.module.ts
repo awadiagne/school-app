@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ClassDetailsComponent } from './class-details/class-details.component';
-import { ClassComponent } from './class/class.component';
-import { StudentDetailsComponent } from './student-details/student-details.component';
-import { StudentComponent } from './student/student.component';
+import { ClassDetailsComponent } from './classes/class-details/class-details.component';
+import { ClassComponent } from './classes/classe/class.component';
+import { StudentDetailsComponent } from './students/student-details/student-details.component';
+import { StudentComponent } from './students/student/student.component';
 
 const routes: Routes = [
   {
