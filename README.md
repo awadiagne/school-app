@@ -1,5 +1,5 @@
 # SchoolApp
-This project creates an app management for a school.
+This project creates an app management for a school. This front end is outdated. Check https://github.com/awadiagne/school-app-front.git for the latest front end code
 
 ## Development server
 
